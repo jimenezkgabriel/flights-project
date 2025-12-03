@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,9 @@
   <link rel="stylesheet" href="./style.css" />
   <!-- Optional JS if you need it later -->
   <script src="./script.js" defer></script>
-  <title>Flight Tracker – Client Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>Flight Tracker Client Demo</title>
 </head>
 
 <body>
@@ -32,83 +35,21 @@
         <div class="nav-left">
           <div class="nav-logo">FlightTracker</div>
         </div>
-        <nav class="nav-right">
-          <a href="#" class="nav-link nav-link-active">Flights</a>
-          <a href="#" class="nav-link">Hotels</a>
-          <a href="#" class="nav-link">Trips</a>
-        </nav>
       </header>
 
-        <!--
+      <!--
           TRIP FIELDS
           Structured fields bar (From / Swap / To / Dates).
           This is the main search “pill” similar to Google Flights.
         -->
-        <div class="trip-fields">
-          <!-- FROM FIELD -->
-          <div class="field field-location">
-            <div class="field-label">From</div>
-            <div class="field-main">
-              Atlanta<span class="sub"> ATL</span>
-            </div>
-          </div>
 
-          <!-- SWAP ARROWS FIELD (JUST VISUAL) -->
-          <div class="swap">
-            <span class="swap-icon">&#8646;</span>
-          </div>
 
-          <!-- TO FIELD -->
-          <div class="field field-location">
-            <div class="field-label">To</div>
-            <div class="field-main muted">
-              Add destination
-            </div>
-          </div>
-
-          <!-- DATES FIELD -->
-          <div class="field field-dates">
-            <div class="field-label">Dates</div>
-            <div class="dates-text">
-              <span>Thu, Dec 18</span>
-              <span class="arrow">&nbsp;–&nbsp;</span>
-              <span>Mon, Dec 22</span>
-            </div>
-          </div>
-        </div>
-
-        <!--
+      <!--
           SECOND ROW (OPTIONAL)
           Another example row so the client sees how multiple searches could look.
           You can delete this if you only want one row.
         -->
-        <div class="trip-row">
-          <div class="trip-fields">
-            <div class="field field-location">
-              <div class="field-label">From</div>
-              <div class="field-main">
-                Atlanta<span class="sub"> ATL</span>
-              </div>
-            </div>
-            <div class="swap">
-              <span class="swap-icon">&#8646;</span>
-            </div>
-            <div class="field field-location">
-              <div class="field-label">To</div>
-              <div class="field-main muted">
-                Add destination
-              </div>
-            </div>
-            <div class="field field-dates">
-              <div class="field-label">Dates</div>
-              <div class="dates-text">
-                <span>Thu, Dec 18</span>
-                <span class="arrow">&nbsp;–&nbsp;</span>
-                <span>Mon, Dec 22</span>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </section>
 
       <!--
@@ -117,7 +58,7 @@
         Just sample data to show what a “current flight” card looks like.
       -->
       <section class="itinerary-wrapper">
-        <h2 class="section-title">Current Flight</h2>
+        <h2 class="section-title">Flights</h2>
 
         <div class="itinerary-card">
           <!-- Optional alert bar above the card -->
@@ -156,4 +97,5 @@
     </div>
   </div>
 </body>
+
 </html>
