@@ -160,13 +160,16 @@ body[data-theme="dark"] {
   font-size: 13px;
   border-radius: 999px;
   border: 1px solid var(--border-color);
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   color: var(--text-main);
   cursor: pointer;
 }
 
-.theme-toggle:hover {
-  background: #e8f0fe;
+ .theme-toggle:hover {
+  filter: brightness(0.8);
+}
+body[data-theme="dark"] .theme-toggle:hover {
+  filter: brightness(2);
 }
 
 
