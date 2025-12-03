@@ -4,24 +4,15 @@
 
 /* Full page background + font setup */
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Background image behind the white card */
   background-image: url("./background.png.png");
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Center the main card and add a subtle gray overlay behind it */
-.page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 32px 16px;
-  background: rgba(241, 243, 244, 0.96); /* similar to Google Flights bg */
 }
 
 /* Main white card that holds everything */
@@ -62,6 +53,120 @@ body {
   display: flex;
   gap: 20px;
 }
+  /* ==========================
+   THEME COLORS (LIGHT & DARK)
+   Using CSS variables so we can switch themes.
+   ========================== */
+
+/* Default theme (light) */
+:root {
+  --page-bg: #f1f3f4;
+  --card-bg: #ffffff;
+  --text-main: #202124;
+  --text-muted: #5f6368;
+  --border-color: #dadce0;
+  --primary: #1a73e8;
+  --nav-bg: #ffffff;
+}
+
+/* Dark theme overrides */
+body[data-theme="dark"] {
+  --page-bg: #202124;
+  --card-bg: #2b2f33;
+  --text-main: #e8eaed;
+  --text-muted: #9aa0a6;
+  --border-color: #3c4043;
+  --primary: #8ab4f8;
+  --nav-bg: #202124;
+}
+
+/* Use variables in your existing layout */
+
+/* Page background */
+.page {
+  background: var(--page-bg);
+  border-radius: 4rem;
+}
+
+/* Main card */
+.flight-frame {
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+/* Nav bar */
+.nav-bar {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Links */
+.nav-link {
+  color: var(--text-muted);
+}
+
+.nav-link-active {
+  color: var(--primary);
+}
+
+/* Chips */
+.chip {
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Trip fields border */
+.trip-fields {
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+/* Labels, muted text */
+.field-label,
+.sub,
+.muted {
+  color: var(--text-muted);
+}
+
+/* Itinerary card */
+.itinerary-card {
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+/* Flight text colors */
+.flight-route {
+  color: var(--text-main);
+}
+
+.flight-sub,
+.flightnumber,
+.flight-class,
+.flight-class-sub {
+  color: var(--text-muted);
+}
+
+/* Theme toggle button styling */
+.theme-toggle {
+  margin-left: 12px;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #e8f0fe;
+}
+
 
 .nav-link {
   font-size: 14px;
@@ -254,6 +359,7 @@ body {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
 }
 
 /* Alert bar at top of card */
@@ -271,7 +377,7 @@ body {
   align-items: center;
   gap: 16px;
   padding: 14px 16px;
-  background: #ffffff;
+  background: var(--nav-bg);
 }
 
 /* Left airline icon box */
