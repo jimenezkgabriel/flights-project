@@ -350,7 +350,7 @@ body[data-theme="dark"] {
   font-size: 18px;
   font-weight: 600;
   margin: 16px 0 8px;
-  color: #202124;
+  color: --text-main;
 }
 
 /* Wrapper card for itinerary + alert */
