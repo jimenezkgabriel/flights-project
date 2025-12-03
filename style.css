@@ -165,9 +165,10 @@ body[data-theme="dark"] {
   cursor: pointer;
 }
 
- .theme-toggle:hover {
+.theme-toggle:hover {
   filter: brightness(0.8);
 }
+
 body[data-theme="dark"] .theme-toggle:hover {
   filter: brightness(2);
 }
