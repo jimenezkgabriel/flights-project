@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./style.css" />
   <!-- Optional JS if you need it later -->
   <script src="./script.js" defer></script>
-  <title>Flight Tracker – Client Demo</title>
+  <title>Flight Tracker Client Demo</title>
 </head>
 
 <body>
@@ -33,9 +33,14 @@
           <div class="nav-logo">FlightTracker</div>
         </div>
         <nav class="nav-right">
-          <a href="#" class="nav-link nav-link-active">Flights</a>
-          <a href="#" class="nav-link">Hotels</a>
-          <a href="#" class="nav-link">Trips</a>
+
+    <!-- Light/Dark toggle button -->
+    <!-- NOTE: This button will switch between light and dark mode -->
+    <button id="theme-toggle" class="theme-toggle">
+      🌙 Dark
+    </button>
+  </nav>
+      
         </nav>
       </header>
 
@@ -71,7 +76,7 @@
             <div class="field-label">Dates</div>
             <div class="dates-text">
               <span>Thu, Dec 18</span>
-              <span class="arrow">&nbsp;–&nbsp;</span>
+              <span class="arrow">&nbsp;&nbsp;</span>
               <span>Mon, Dec 22</span>
             </div>
           </div>
@@ -103,7 +108,7 @@
               <div class="field-label">Dates</div>
               <div class="dates-text">
                 <span>Thu, Dec 18</span>
-                <span class="arrow">&nbsp;–&nbsp;</span>
+                <span class="arrow">&nbsp;&nbsp;</span>
                 <span>Mon, Dec 22</span>
               </div>
             </div>
@@ -122,7 +127,7 @@
         <div class="itinerary-card">
           <!-- Optional alert bar above the card -->
           <div class="card-alert">
-            Sample data only – this is a design placeholder for live flight information.
+            Sample data only this is a design placeholder for live flight information.
           </div>
 
           <!-- FLIGHT CARD BODY -->
@@ -132,7 +137,7 @@
 
             <!-- Main flight info: time + route + notes -->
             <div class="flight-main">
-              <div class="flight-time">Sat, 3:20 pm – 4:44 pm</div>
+              <div class="flight-time">Sat, 3:20 pm 4:44 pm</div>
               <div class="flight-route">LAX → TPE</div>
               <div class="flight-sub">Nonstop · Example placeholder flight</div>
             </div>
