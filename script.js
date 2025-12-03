@@ -26,27 +26,6 @@ const errorMsg = document.getElementById('error');
 const filterInput = document.getElementById('flightFilter');
 const spinner = document.getElementById('spinner');
 
-
-// let testData = JSON.parse(localStorage.getItem('flightsData'));
-
-// console.log(testData);
-
-// flightList = JSON.parse(localStorage.getItem('flightsData')).data.map(flight =>
-//   new Flight(
-//     flight.airline.name, flight.flight.number == null ? '--' : flight.flight.number, flight.departure.scheduled, flight.arrival.scheduled, flight.departure.iata, flight.arrival.iata, flight.flight_status
-//   )
-// );
-
-
-
-
-// const API_KEY = `9148abe185ad8a93706dba95d104ad58`
-// fetch(`https://api.aviationstack.com/v1/flights?access_key=${API_KEY}`)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   })
-
 const fetchFlights = async () => {
   try {
     spinner.classList.remove('visually-hidden');
@@ -57,7 +36,7 @@ const fetchFlights = async () => {
       new Flight(
         flight.airline.name, flight.flight.number == null ? '--' : flight.flight.number, flight.departure.scheduled, flight.arrival.scheduled, flight.departure.iata, flight.arrival.iata, flight.flight_status
       ));
-      displayFlights(flightList);
+    displayFlights(flightList);
   }
   catch (error) {
     console.error('Error fetching flight data:', error);
@@ -70,13 +49,6 @@ const fetchFlights = async () => {
 }
 
 flightBtn.addEventListener('click', fetchFlights);
-
-// simulate loading time
-// setTimeout(() => {
-//   spinner.classList.add('visually-hidden');
-// }, 3000);
-
-
 
 const displayFlights = (flightList) => {
   flights.innerHTML = '';
@@ -108,7 +80,6 @@ const displayFlights = (flightList) => {
   })
 }
 
-
 filterInput.addEventListener('input', (e) => {
   const searchTerm = e.target.value.toLowerCase();
   const filteredFlights = flightList.filter(flight =>
@@ -139,15 +110,7 @@ sortAirlineBtn.addEventListener('click', (e) => {
   }
 });
 
-
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
+ocument.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("theme-toggle");
   const body = document.body;
 

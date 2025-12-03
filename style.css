@@ -47,7 +47,8 @@ body {
 .nav-logo {
   font-size: 20px;
   font-weight: 600;
-  color: #1a73e8; /* Google-ish blue */
+  color: #1a73e8;
+  /* Google-ish blue */
 }
 
 /* Right side: simple links */
@@ -55,7 +56,8 @@ body {
   display: flex;
   gap: 20px;
 }
-  /* ==========================
+
+/* ==========================
    THEME COLORS (LIGHT & DARK)
    Using CSS variables so we can switch themes.
    ========================== */
@@ -277,7 +279,7 @@ body[data-theme="dark"] {
 }
 
 /* Separator between fields */
-.field + .field,
+.field+.field,
 .swap {
   border-left: 1px solid #dadce0;
 }

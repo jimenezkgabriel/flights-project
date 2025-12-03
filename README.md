@@ -12,9 +12,9 @@ This project fetches data from a real-time flight tracking API, displaying the l
 The UI is inspired by Google Flights, with a card-based design and light/dark mode toggle.
 
 ## Team Members
-- **Gabe** – JavaScript/Backend, Frontend Functionality, Project Manager, HTML structure
-- **Tia** – HTML, CSS Styling & Design, Figma Wireframe
-- **Tyler** – CSS, README Documentation
+- **Gabe** – Backend, Frontend, Project Manager
+- **Tia** – Figma Designer, Frontend
+- **Tyler** – Editor, QA
 
 ## Wireframe Design
 [Figma Wireframe](https://www.figma.com/design/zs597wsa5w6RaY5SeKLxxW/Untitled?node-id=2-3&t=9tCkFRh6TjGjRbYr-1)
@@ -24,9 +24,13 @@ The UI is inspired by Google Flights, with a card-based design and light/dark mo
 - Displays flight cards with airline, route, duration, and class
 - Light/Dark mode toggle
 - Filter flights by airline name
+- Sort by Airline name in alphabetical order or reverse alhpabetical
+- Error message if no flights exist
 
 ## Technologies Used
-- **HTML** – Semantic structure for flight cards and layout
-- **CSS** – Custom styling, responsive design, light/dark themes
+- **HTML** - The backbone of every web document!
+- **CSS** – Custom styling
 - **JavaScript** – API fetch, DOM manipulation, event handling
 - **Git & GitHub** – Version control and collaboration
+- **Bootstrap** - For a few CSS helpers and responsive design
+- **[Flight Tracker API](https://docs.apilayer.com/aviationstack/docs/aviationstack-api-v-1-0-0?utm_source=AviationstackHomePage&utm_medium=Referral#/default/getFlights)**
