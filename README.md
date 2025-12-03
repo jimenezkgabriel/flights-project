@@ -1,57 +1,32 @@
+# ✈️ Flight Tracker app
+
 ## Project Overview
-we fetch a real time flight tracking API, displaying the latest flights, arrival times, departure times, airport name, departure airport, arrival airport, flight number, airline name, and flight number. This project also allows you to filter by airline name. 
+This project fetches data from a real-time flight tracking API, displaying the latest flights with details such as:
+- Arrival times
+- Departure times
+- Airport names
+- Flight number
+- Airline name
+- Total travel duration
+  
+The UI is inspired by Google Flights, with a card-based design and light/dark mode toggle.
 
 ## Team Members
-- Gabe- JavaScript/Backend,Frontend Functionality, Project manager.HTML Structure.
-- Tia - HTML, CSS Styling & Design, Figma Wireframe
-- Tyler - README
+- **Gabe** – JavaScript/Backend, Frontend Functionality, Project Manager, HTML structure
+- **Tia** – HTML, CSS Styling & Design, Figma Wireframe
+- **Tyler** – CSS, README Documentation
 
 ## Wireframe Design
-https://www.figma.com/design/zs597wsa5w6RaY5SeKLxxW/Untitled?node-id=2-3&t=9tCkFRh6TjGjRbYr-1
-
+[Figma Wireframe](https://www.figma.com/design/zs597wsa5w6RaY5SeKLxxW/Untitled?node-id=2-3&t=9tCkFRh6TjGjRbYr-1)
 
 ## Features
-Fetches flight information
+- Fetches real-time flight information
+- Displays flight cards with airline, route, duration, and class
+- Light/Dark mode toggle
+- Filter flights by airline name
 
 ## Technologies Used
-- **HTML5** - 
-- **CSS3** - 
-- **JavaScript 
-- **Git & GitHub** -
-
-## How to Run
-
-
-
-## JavaScript Features
-- **Smooth Scrolling**: 
-- **Form Validation**:
-- **Alert Confirmation**: 
-- **Event Handling**:
-
-## Development Process
-1. **Sprint 1**: 
-2. **Sprint 2**:
-3. **Sprint 3**: 
-4. **Sprint 4**: 
-5. **Sprint 5**: 
-
-## Challenges & Solutions
-**Challenge**: 
-**Solution**: 
-
-**Challenge**: 
-**Solution**: 
-
-**Challenge**:
-**Solution**: 
-
-## MVP Requirements Met
-
-
-## Stretch Goals Completed
-
-
-## Credits
-- Font: 
-- Icons: 
+- **HTML** – Semantic structure for flight cards and layout
+- **CSS** – Custom styling, responsive design, light/dark themes
+- **JavaScript** – API fetch, DOM manipulation, event handling
+- **Git & GitHub** – Version control and collaboration
