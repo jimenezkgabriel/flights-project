@@ -18,6 +18,7 @@ class Flight {
   }
 }
 
+
 let flightList = [];
 
 const flightBtn = document.getElementById('fetchFlights');
