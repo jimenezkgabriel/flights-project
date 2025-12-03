@@ -82,11 +82,13 @@ body[data-theme="dark"] {
   --nav-bg: #202124;
 }
 
+
+
 /* Use variables in your existing layout */
 
 /* Page background */
 .page {
-  background: var(--page-bg);
+  /* background: var(--page-bg); */
   border-radius: 4rem;
 }
 
@@ -141,10 +143,6 @@ body[data-theme="dark"] {
   background: var(--card-bg);
 }
 
-/* Flight text colors */
-.flight-route {
-  color: var(--text-main);
-}
 
 .flight-sub,
 .flightnumber,
@@ -350,13 +348,29 @@ body[data-theme="dark"] {
   font-size: 18px;
   font-weight: 600;
   margin: 16px 0 8px;
-  color: --text-main;
+  color: var(--text-main);
+}
+
+#spinner {
+  max-width: 620px;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn {
+  max-width: 20rem;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 /* Wrapper card for itinerary + alert */
 .itinerary-card {
   width: 100%;
-  max-width: 620px;
   border: 1px solid #d3d9e3;
   border-radius: 12px;
   overflow: hidden;
@@ -387,7 +401,7 @@ body[data-theme="dark"] {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  background: #004b7c;
+  background: #1bced1;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -411,7 +425,7 @@ body[data-theme="dark"] {
 /* Route row (LAX → TPE) */
 .flight-route {
   font-size: 14px;
-  color: #444;
+  color: var(--text-main);
 }
 
 /* Smaller note underneath */
@@ -436,14 +450,14 @@ body[data-theme="dark"] {
 /* Flight number line */
 .flightnumber {
   font-size: 12px;
-  color: #666;
+  color: var(--text-main);
   margin-top: 2px;
 }
 
 /* Class line */
 .flight-class {
   font-size: 12px;
-  color: #666;
+  color: var(--text-main);
   margin-top: 2px;
 }
 
@@ -462,7 +476,7 @@ body[data-theme="dark"] {
 /* Duration subtitle */
 .flight-class-sub {
   font-size: 12px;
-  color: #666;
+  color: var(--text-main);
   margin-top: 2px;
 }
 
@@ -470,7 +484,7 @@ body[data-theme="dark"] {
    RESPONSIVE (TABLET / MOBILE)
    ========================== */
 
-@media (max-width: 900px) {
+@media (max-width: 426px) {
   .flight-frame {
     padding: 16px;
   }
@@ -496,5 +510,9 @@ body[data-theme="dark"] {
 
   .flight-duration-box {
     text-align: left;
+  }
+
+  .sort-container {
+    justify-content: center;
   }
 }

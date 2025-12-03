@@ -14,82 +14,60 @@
 </head>
 
 <body>
-  <!--
-    PAGE WRAPPER
-    Full-page background image.
-    Centers the main white card (similar to Google Flights).
-  -->
-  <div class="page">
-    <!--
-      MAIN CARD
-      This is the main white card that sits on top of the background.
-      All content (nav, tabs, search, itinerary) lives inside this.
-    -->
-    <div class="flight-frame">
-
-      <!--
-        NAV BAR (TOP)
-        Similar to Google Flights: logo/title on the left, simple links on the right.
-      -->
+  <div class="page container">
+    <div class="flight-frame shadow-lg">
       <header class="nav-bar">
         <div class="nav-left">
           <div class="nav-logo">FlightTracker</div>
         </div>
         <nav class="nav-right">
-
-          <!-- Light/Dark toggle button -->
-          <!-- NOTE: This button will switch between light and dark mode -->
           <button id="theme-toggle" class="theme-toggle">
             🌙 Dark
           </button>
         </nav>
-
         </nav>
       </header>
+        <button id="fetchFlights" class="btn btn-primary btn-lg d-block mx-auto" style="max-width: 32rem; padding: 3rem;">FETCH FLIGHT DATA BECAUSE THE API IS STINGY</button>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="flightFilter" placeholder="Look Up A Flight...">
+        <label for="flightFilter">Look up flight...</label>
+      </div>
+      <span id="error" class="text-danger fw-bolder d-none">No flights found!</span>
+      <div class="sort-container">
+        <button id="sort-airline-az" class="btn btn-secondary mb-3 rounded-pill a-z">Sort by Airline (A-Z)</button>
+      </div>
+      <h2 class="section-title">Flights</h2>
 
-      <!--
-          TRIP FIELDS
-          Structured fields bar (From / Swap / To / Dates).
-          This is the main search “pill” similar to Google Flights.
-        -->
-
-
-        <h2 class="section-title">Flights</h2>
-        <section class="itinerary-wrapper">
-
-        <div class="itinerary-card">
-          <!-- Optional alert bar above the card -->
-
-          <!-- FLIGHT CARD BODY -->
-          <div class="flight-card">
-            <!-- Airline icon box -->
-            <div class="airline-icon">✈️</div>
-
-            <!-- Main flight info: time + route + notes -->
-            <div class="flight-main">
-              <div class="flight-time">Sat, 3:20 pm 4:44 pm</div>
-              <div class="flight-route">LAX → TPE</div>
-              <div class="flight-sub">Nonstop · Example placeholder flight</div>
-            </div>
-
-            <!-- Airline + flight number -->
-            <div class="flight-meta">
-              <div class="airline">Alaska Air 5</div>
-              <div class="flightnumber">Flight number placeholder</div>
-              <div class="flight-class">Economy</div>
-            </div>
-
-            <!-- Duration -->
-            <div class="flight-duration-box">
-              <div class="flight-duration">13h 15m</div>
-              <div class="flight-class-sub">Total travel time</div>
-            </div>
+      <!-- ===========Template============= -->
+      <div id="template" class="itinerary-card template visually-hidden">
+        <div class="flight-card">
+          <div class="airline-icon">✈️</div>
+          <div class="flight-main">
+            <div class="flight-time">Sat, 3:20 pm 4:44 pm</div>
+            <div class="flight-route">LAX → TPE</div>
+            <div class="flight-sub badge text-bg-info">Nonstop · Example placeholder flight</div>
+          </div>
+          <div class="flight-meta">
+            <div class="airline">Alaska Air 5</div>
+            <div class="flightnumber">Flight number placeholder</div>
+            <div class="flight-class">Economy</div>
+          </div>
+          <div class="flight-duration-box">
+            <div class="flight-duration">13h 15m</div>
+            <div class="flight-class-sub">Total travel time</div>
           </div>
         </div>
+      </div>
+      <!-- =============End Template========== -->
+
+      <img id="spinner" class="img-fluid mh-100 mw-100 visually-hidden"
+        src="https://i.pinimg.com/originals/f0/7d/ff/f07dff6966ac48982773fbb149bfde48.gif">
+      <section id="list" class="itinerary-wrapper">
+
+        <!-- List of Flights go here! -->
+
       </section>
-
     </div>
-
   </div>
   </div>
 </body>
