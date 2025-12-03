@@ -3,71 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Optional JS if you need it later -->
   <script src="./script.js" defer></script>
-  <title>Flight Itinerary Layout</title>
-
+  <title>Flight Tracker – Client Demo</title>
 </head>
+
 <body>
-  <div class="app">
-
-    <!-- Top browser bar -->
-    <header class="browser-bar">
-      <div class="browser-left">
-        <div class="browser-circle"></div>
-      </div>
-      <div class="browser-right">
-        <span class="browser-arrow">➜</span>
-      </div>
-    </header>
-
-    <main class="page">
-
-      <!-- Search bar -->
-      <div class="search-row">
-        <input class="search-input" type="text" placeholder="Search flights..." />
-      </div>
-
-      <!-- Tabs + red underline -->
-      <div class="tabs-row">
-        <div class="tab-box"></div>
-        <div class="tab-active-line"></div>
-        <div class="tab-box"></div>
-      </div>
-
-      <!-- Big content box -->
-      <section class="content-box">
-
-          <!-- link to external CSS file -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <!--
+    PAGE WRAPPER
+    Full-page background image.
+    Centers the main white card (similar to Google Flights).
+  -->
   <div class="page">
+    <!--
+      MAIN CARD
+      This is the main white card that sits on top of the background.
+      All content (nav, tabs, search, itinerary) lives inside this.
+    -->
     <div class="flight-frame">
-      <!-- ROW 1 -->
-      <div class="trip-row">
-        <!-- top-left controls: Round trip | 1 | Economy -->
-        <div class="trip-controls">
-    
 
-        <!-- route & dates -->
+      <!--
+        NAV BAR (TOP)
+        Similar to Google Flights: logo/title on the left, simple links on the right.
+      -->
+      <header class="nav-bar">
+        <div class="nav-left">
+          <div class="nav-logo">FlightTracker</div>
+        </div>
+        <nav class="nav-right">
+          <a href="#" class="nav-link nav-link-active">Flights</a>
+          <a href="#" class="nav-link">Hotels</a>
+          <a href="#" class="nav-link">Trips</a>
+        </nav>
+      </header>
+
+        <!--
+          TRIP FIELDS
+          Structured fields bar (From / Swap / To / Dates).
+          This is the main search “pill” similar to Google Flights.
+        -->
         <div class="trip-fields">
-          <!-- from -->
+          <!-- FROM FIELD -->
           <div class="field field-location">
-            <span class="field-icon">●</span>
-            <span class="field-main">Atlanta <span class="sub">ATL</span></span>
+            <div class="field-label">From</div>
+            <div class="field-main">
+              Atlanta<span class="sub"> ATL</span>
+            </div>
           </div>
 
-          <!-- swap arrows -->
+          <!-- SWAP ARROWS FIELD (JUST VISUAL) -->
           <div class="swap">
-            <span>&#8646;</span>
+            <span class="swap-icon">&#8646;</span>
           </div>
 
-        
+          <!-- TO FIELD -->
+          <div class="field field-location">
+            <div class="field-label">To</div>
+            <div class="field-main muted">
+              Add destination
+            </div>
+          </div>
 
-          <!-- dates -->
+          <!-- DATES FIELD -->
           <div class="field field-dates">
-            <span class="field-icon">📅</span>
+            <div class="field-label">Dates</div>
             <div class="dates-text">
               <span>Thu, Dec 18</span>
               <span class="arrow">&nbsp;–&nbsp;</span>
@@ -75,69 +76,84 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- ROW 2 (same layout) -->
-      <div class="trip-row">
-        <div class="trip-controls">
-        
-
-        <div class="trip-fields">
-          <div class="field field-location">
-            <span class="field-icon">●</span>
-            <span class="field-main">Atlanta <span class="sub">ATL</span></span>
-          </div>
-
-          <div class="swap">
-            <span>&#8646;</span>
-          </div>
-
-        
-
-          <div class="field field-dates">
-            <span class="field-icon">📅</span>
-            <div class="dates-text">
-              <span>Thu, Dec 18</span>
-              <span class="arrow">&nbsp;–&nbsp;</span>
-              <span>Mon, Dec 22</span>
+        <!--
+          SECOND ROW (OPTIONAL)
+          Another example row so the client sees how multiple searches could look.
+          You can delete this if you only want one row.
+        -->
+        <div class="trip-row">
+          <div class="trip-fields">
+            <div class="field field-location">
+              <div class="field-label">From</div>
+              <div class="field-main">
+                Atlanta<span class="sub"> ATL</span>
+              </div>
+            </div>
+            <div class="swap">
+              <span class="swap-icon">&#8646;</span>
+            </div>
+            <div class="field field-location">
+              <div class="field-label">To</div>
+              <div class="field-main muted">
+                Add destination
+              </div>
+            </div>
+            <div class="field field-dates">
+              <div class="field-label">Dates</div>
+              <div class="dates-text">
+                <span>Thu, Dec 18</span>
+                <span class="arrow">&nbsp;–&nbsp;</span>
+                <span>Mon, Dec 22</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="itinerary">
-    <!-- First layover -->
-
-
-    <!-- First flight segment -->
-    <div class="flight-card">
-
-      <div class="flight-main">
-        <div class="flight-time">Sat, 3:20 pm - 4:44 pm</div>
-        <div class="route">LAX &rarr; TPE</div>
-      </div>
-
-      <div class="flight-details">
-        <div class="airline">Alaska Air 5</div>
-        <div class="flightnumber">flight number</div>
-      </div>
-
-      <div class="flight-duration">
-        <div class="length">13h 15m</div>
-      </div>
-    </div>
-
-
-</body>
-</html>
-        
-
-        </article>
       </section>
 
-    </main>
+      <!--
+        ITINERARY SECTION
+        This is your flight card with timing, route, airline, and duration.
+        Just sample data to show what a “current flight” card looks like.
+      -->
+      <section class="itinerary-wrapper">
+        <h2 class="section-title">Current Flight</h2>
+
+        <div class="itinerary-card">
+          <!-- Optional alert bar above the card -->
+          <div class="card-alert">
+            Sample data only – this is a design placeholder for live flight information.
+          </div>
+
+          <!-- FLIGHT CARD BODY -->
+          <div class="flight-card">
+            <!-- Airline icon box -->
+            <div class="airline-icon">AS</div>
+
+            <!-- Main flight info: time + route + notes -->
+            <div class="flight-main">
+              <div class="flight-time">Sat, 3:20 pm – 4:44 pm</div>
+              <div class="flight-route">LAX → TPE</div>
+              <div class="flight-sub">Nonstop · Example placeholder flight</div>
+            </div>
+
+            <!-- Airline + flight number -->
+            <div class="flight-meta">
+              <div class="airline">Alaska Air 5</div>
+              <div class="flightnumber">Flight number placeholder</div>
+              <div class="flight-class">Economy</div>
+            </div>
+
+            <!-- Duration -->
+            <div class="flight-duration-box">
+              <div class="flight-duration">13h 15m</div>
+              <div class="flight-class-sub">Total travel time</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </div>
 </body>
 </html>

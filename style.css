@@ -1,313 +1,374 @@
+/* ==========================
+   GLOBAL PAGE STYLES
+   ========================== */
 
-body {
-    background-image: url("./background.png.png");
-    background-size: cover;
-    background-position: center;   /* Always centered */
-    background-repeat: no-repeat;  /* No tiling */
-    height: 100vh;                 /* Full screen height */
-    margin: 0;                     /* Remove default browser margin */
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
-
-/* Outer app frame (browser window) */
-.app {
-  width: 1000px;
-  height: 600px;
-  margin: 40px auto;
-  border: 4px solid #000;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Top bar */
-.browser-bar {
-  background-color: rgb(213, 233, 246) ;
-  height: 200px;
-  width: 952px;
-  border-bottom: 4px solid #000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  padding-bottom: 24px;
-}
-
-.browser-circle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 4px solid #ece3e3;
-}
-
-.browser-arrow {
-  font-size: 20px;
-}
-
-.search-row{
-
-    height: 50px;
-    width: 2000px;
-    margin: 0;
-    padding: 1%;
-}
-
-
-/* Main content area */
-.page {
-  flex: 1;
-  padding: 24px 32px;
-}
-
-/* Search bar */
-.search-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.search-input {
-  
-background-color: #00658c;
-  width: 80%;
-  padding: 10px 12px;
-  border: 4px solid #000;
-  outline: none;
-}
-
-/* /* page background */
+/* Full page background + font setup */
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Background image behind the white card */
+  background-image: url("./background.png.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+/* Center the main card and add a subtle gray overlay behind it */
 .page {
   min-height: 100vh;
-  background: #f1f3f4;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 40px 16px;
+  padding: 32px 16px;
+  background: rgba(241, 243, 244, 0.96); /* similar to Google Flights bg */
 }
 
-/* main white card */
+/* Main white card that holds everything */
 .flight-frame {
   width: 100%;
   max-width: 1240px;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  padding: 16px 24px;
-  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 16px 24px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-    .itinerary {
-      width: 520px;
-      background: #ffffff;
-      border: 1px solid #d3d9e3;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
+/* ==========================
+   NAV BAR
+   ========================== */
 
-    /* Layover header row */
-    .layover-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 16px;
-      font-size: 13px;
-      color: #555a66;
-      background: #f7f9fc;
-      border-bottom: 1px solid #e0e4ed;
-    }
-
-    .layover-header .duration {
-      font-weight: 600;
-    }
-
-    /* Flight card */
-    .flight-card {
-      display: flex;
-      padding: 12px 16px;
-      border-bottom: 1px solid #e0e4ed;
-      gap: 12px;
-    }
-
-    .logo-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 4px;
-      background: #00658c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .flight-main {
-      flex: 2;
-      font-size: 13px;
-    }
-
-    .flight-time {
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-
-    .route {
-      color: #555a66;
-      margin-bottom: 4px;
-    }
-
-    .note {
-      font-size: 11px;
-      color: #949aa8;
-      margin-top: 2px;
-    }
-
-    .flight-details,
-    .flight-duration {
-      flex: 1;
-      font-size: 13px;
-      text-align: right;
-    }
-
-    .flight-details .airline {
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-
-    .flight-details .aircraft,
-    .flight-duration .cabin {
-      font-size: 11px;
-      color: #777c88;
-    }
-
-    .flight-duration .length {
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-
-
+/* Top navigation bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dadce0;
 }
 
+/* Left side: logo / title */
+.nav-logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a73e8; /* Google-ish blue */
+}
+
+/* Right side: simple links */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-size: 14px;
+  color: #5f6368;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #1a73e8;
+}
+
+.nav-link-active {
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+/* ==========================
+   TAB BAR
+   ========================== */
+
+/* Container for tabs */
+.tabs-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Individual tab button */
+.tab {
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #5f6368;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+/* Active tab styling */
+.tab.active {
+  color: #1a73e8;
+  font-weight: 500;
+  border-color: #1a73e8;
+}
+
+/* ==========================
+   SEARCH SECTION
+   ========================== */
+
+/* Wrapper for search controls + fields */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* Row of chips (Round trip / travelers / class) */
+.trip-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Reusable pill-style chip buttons */
 .chip {
   border: 1px solid #dadce0;
   background: #ffffff;
   border-radius: 999px;
   padding: 6px 12px;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
   font-size: 13px;
+  color: #3c4043;
 }
 
 .chip:hover {
   background: #f1f3f4;
 }
 
-
-.icon-person::after {
-  content: "";
-  position: absolute;
-  bottom: -7px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 6px;
-  border-radius: 8px 8px 0 0;
-  border: 2px solid #5f6368;
-  border-top: none;
+/* Active chip (selected control) */
+.chip-active {
+  border-color: #1a73e8;
+  color: #1a73e8;
 }
 
-/* bottom line of input boxes */
+/* ==========================
+   TRIP FIELDS (SEARCH BAR)
+   ========================== */
+
+/* Structured fields container (From / Swap / To / Dates) */
 .trip-fields {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) auto minmax(0, 2.2fr) minmax(
-      0,
-      2.2fr
-    );
-  gap: 0;
+  grid-template-columns: minmax(0, 2.2fr) auto minmax(0, 2.2fr) minmax(0, 2.2fr);
   border: 1px solid #dadce0;
   border-radius: 12px;
   overflow: hidden;
+  background: #ffffff;
 }
 
-/* generic field box */
+/* Generic field styling */
 .field {
   display: flex;
-  align-items: center;
-  padding: 14px 16px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 16px;
   background: #ffffff;
   font-size: 15px;
 }
 
-.field + .field {
+/* Separator between fields */
+.field + .field,
+.swap {
   border-left: 1px solid #dadce0;
 }
 
-.field-icon {
-  font-size: 14px;
-  margin-right: 8px;
+/* Small label above each field (From / To / Dates) */
+.field-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5f6368;
+  margin-bottom: 2px;
 }
 
+/* Main field text (city + code) */
 .field-main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.field-location .sub {
+/* Sub text like airport code */
+.sub {
   font-size: 12px;
   color: #5f6368;
   margin-left: 4px;
 }
 
-.muted .field-main {
+/* Muted text for placeholders */
+.muted {
   color: #5f6368;
 }
 
-/* swap arrows section */
+/* Swap arrows box in the center */
 .swap {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 8px;
   background: #ffffff;
-  border-left: 1px solid #dadce0;
-  border-right: 1px solid #dadce0;
 }
 
-.swap span {
+.swap-icon {
   font-size: 18px;
   color: #5f6368;
 }
 
-/* dates box */
+/* Dates field layout */
 .field-dates .dates-text {
   display: flex;
   align-items: center;
-  gap: 0;
 }
 
+/* Small arrow between dates */
 .field-dates .arrow {
   color: #5f6368;
 }
 
-/* responsive tweak */
+/* Additional row styling (if you have multiple rows) */
+.trip-row {
+  margin-top: 8px;
+}
+
+/* ==========================
+   ITINERARY / FLIGHT CARD
+   ========================== */
+
+/* Section title above the itinerary */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+  color: #202124;
+}
+
+/* Wrapper card for itinerary + alert */
+.itinerary-card {
+  width: 100%;
+  max-width: 620px;
+  border: 1px solid #d3d9e3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Alert bar at top of card */
+.card-alert {
+  padding: 10px 16px;
+  background: #ffe6bf;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #5a3b00;
+}
+
+/* Flight card row inside the itinerary */
+.flight-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: #ffffff;
+}
+
+/* Left airline icon box */
+.airline-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: #004b7c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Main flight info (time + route + note) */
+.flight-main {
+  flex: 1.5;
+}
+
+/* Time row */
+.flight-time {
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+/* Route row (LAX → TPE) */
+.flight-route {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Smaller note underneath */
+.flight-sub {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* Middle meta column: airline name / flight number / class */
+.flight-meta {
+  flex: 1;
+  min-width: 120px;
+  font-size: 13px;
+}
+
+/* Airline name */
+.airline {
+  font-weight: 600;
+}
+
+/* Flight number line */
+.flightnumber {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Class line */
+.flight-class {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Right column: duration info */
+.flight-duration-box {
+  min-width: 110px;
+  text-align: right;
+  font-size: 13px;
+}
+
+/* Duration text */
+.flight-duration {
+  font-weight: 700;
+}
+
+/* Duration subtitle */
+.flight-class-sub {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* ==========================
+   RESPONSIVE (TABLET / MOBILE)
+   ========================== */
+
 @media (max-width: 900px) {
+  .flight-frame {
+    padding: 16px;
+  }
+
   .trip-fields {
     grid-template-columns: 1fr;
-    border-radius: 12px;
   }
 
   .field,
@@ -319,68 +380,13 @@ body {
   .field:first-child {
     border-top: none;
   }
-}
 
-.airline-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: #004b7c;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  margin-right: 16px;
-}
+  .flight-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.flight-main {
-  flex: 1;
-}
-
-.flight-time {
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.flight-route {
-  font-size: 14px;
-  color: #444;
-}
-
-.flight-sub {
-  font-size: 12px;
-  color: #777;
-  margin-top: 4px;
-}
-
-.flight-meta {
-  text-align: right;
-  min-width: 90px;
-}
-
-.flight-duration {
-  font-weight: 700;
-}
-
-.flight-class {
-  font-size: 13px;
-  color: #666;
-}
-
-/* Layover lines */
-.layover {
-  padding: 8px 20px;
-  font-size: 13px;
-  color: #666;
-  background: #f7f7f7;
-  border-bottom: 1px solid #e2e2e2;
-}
-
-/* Alert bar */
-.card-alert {
-  padding: 12px 20px;
-  background: #ffe6bf;
-  font-size: 13px;
-  line-height: 1.4;
+  .flight-duration-box {
+    text-align: left;
+  }
 }
