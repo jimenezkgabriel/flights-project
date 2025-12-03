@@ -35,7 +35,7 @@ const fetchFlights = async () => {
     console.log(data);
     flightList = data.data.map(flight =>
       new Flight(
-        flight.airline.name, flight.flight.number == null ? '--' : flight.flight.number, flight.departure.scheduled, flight.arrival.scheduled, flight.departure.iata, flight.arrival.iata, flight.flight_status
+        flight.airline.name == null ? '--' : flight.airline.name, flight.flight.number == null ? '--' : flight.flight.number, flight.departure.scheduled, flight.arrival.scheduled, flight.departure.iata, flight.arrival.iata, flight.flight_status
       ));
     displayFlights(flightList);
   }
